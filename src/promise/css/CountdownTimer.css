@@ -1,0 +1,82 @@
+/* CountdownTimer.css */
+.countdown-container {
+    width: 100%;
+    max-width: 100%; /* 新增限制 */
+    min-height: 100%;
+    padding: 0 1px; /* 增加安全边距 */
+    box-sizing: border-box;
+}
+
+/* 时间行样式 */
+.time-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* 允许换行 */
+    gap: 4px; /* 缩小间隙 */
+    margin-bottom: 1rem;
+}
+
+.time-unit {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    padding: 0.8rem 1.2rem;
+    /*min-width: 70px;*/
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.time-value {
+    font-size: clamp(1.1rem, 4vw, 2.4rem);
+    font-weight: bold;
+    color: #ff0000;
+    text-shadow: 0 0 6px rgba(255, 117, 69, 0.4);
+}
+
+.time-label {
+    color: #ff7a45;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+}
+
+.time-separator {
+    color: #ff7a45;
+    font-size: 1.6rem;
+    margin: 0 0.2rem;
+    transform: translateY(-4px);
+}
+
+@media (max-width: 290px) {
+    .time-unit {
+        min-width: 30px !important; /* 进一步缩小 */
+        padding: 0.1rem !important;
+        margin: 0 1px; /* 最小间隙 */
+    }
+
+    .time-value {
+        font-size: 0.1rem !important; /* 更小字号 */
+    }
+
+    .time-separator {
+        font-size: 1.1rem !important;
+        transform: translateY(-2px);
+    }
+
+    /* 超小屏幕隐藏秒数 */
+    @media (max-width: 290px) {
+        .time-unit:last-child {
+            display: none;
+        }
+        .time-separator:last-child {
+            display: none;
+        }
+    }
+}
+
+/* 进度条行优化 */
+.progress-row {
+    padding: 0 5px;
+    .ant-progress-text {
+        font-size: 0.8rem !important; /* 更小文字 */
+        white-space: nowrap; /* 防止换行 */
+    }
+}
