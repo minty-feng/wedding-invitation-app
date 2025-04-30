@@ -45,4 +45,11 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-## 杨呦呦
+## Launch 杨呦呦
+
+```
+ssh-add -l
+ssh -T git@github.com
+eval "$(ssh-agent -s)"
+ssh-add --apple-use-keychain ~/.ssh/didi_github_rsa
+```
